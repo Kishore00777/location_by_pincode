@@ -111,7 +111,7 @@ export default function ProductCard() {
         color="primary"
         sx={{ fontWeight: "bold", mt: "5%" }}
       >
-        Get Location by Pincode
+        Get Location by Pincode 
       </Typography>
       <br />
       <Card
