@@ -104,19 +104,6 @@ export default function ProductCard() {
 
   return (
     <>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        transition={Bounce}
-      />
       {/* {loading && <LinearProgress color="primary" />} */}
       <Typography
         variant="h4"
@@ -170,6 +157,19 @@ export default function ProductCard() {
             <>
               {getResponse ? (
                 <>
+                  <ToastContainer
+                    position="bottom-center"
+                    autoClose={1000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                    transition={Bounce}
+                  />
                   {data.length === 0 ? (
                     <Typography align="center" variant="body2" color="error">
                       Invalid pincode. Please enter a valid pincode
