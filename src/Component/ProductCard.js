@@ -119,6 +119,7 @@ export default function ProductCard() {
         transition={Bounce}
       />
       {/* {loading && <LinearProgress color="primary" />} */}
+
       <Typography
         variant="h4"
         align="center"
@@ -151,6 +152,10 @@ export default function ProductCard() {
             value={pincode}
             onChange={(event) => {
               CheckValidPincode(event);
+            }}
+            inputProps={{
+              pattern: "\\d{6}", // Regular expression for 6-digit numbers
+              maxLength: 6, // Maximum length of input
             }}
             sx={{
               "& .MuiInputBase-root": {
