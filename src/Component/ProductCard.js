@@ -87,7 +87,8 @@ export default function ProductCard() {
         theme: "dark",
         transition: Bounce,
       });
-    } else {
+    }
+    if (getResponse && data.length === 0) {
       toast.error("Bad Request!", {
         position: "bottom-center",
         autoClose: 1000,
@@ -104,6 +105,19 @@ export default function ProductCard() {
 
   return (
     <>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
       {/* {loading && <LinearProgress color="primary" />} */}
       <Typography
         variant="h4"
@@ -111,7 +125,7 @@ export default function ProductCard() {
         color="primary"
         sx={{ fontWeight: "bold", mt: "5%" }}
       >
-        Get Location by Pincode 
+        Get Location by Pincode
       </Typography>
       <br />
       <Card
@@ -138,6 +152,11 @@ export default function ProductCard() {
             onChange={(event) => {
               CheckValidPincode(event);
             }}
+            sx={{
+              "& .MuiInputBase-root": {
+                height: "50px",
+              },
+            }}
           />
           <br />
           <Button
@@ -157,19 +176,6 @@ export default function ProductCard() {
             <>
               {getResponse ? (
                 <>
-                  <ToastContainer
-                    position="bottom-center"
-                    autoClose={1000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="dark"
-                    transition={Bounce}
-                  />
                   {data.length === 0 ? (
                     <Typography align="center" variant="body2" color="error">
                       Invalid pincode. Please enter a valid pincode
