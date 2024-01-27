@@ -154,8 +154,8 @@ export default function ProductCard() {
               CheckValidPincode(event);
             }}
             inputProps={{
-              pattern: "\\d{6}", // Regular expression for 6-digit numbers
-              maxLength: 6, // Maximum length of input
+              pattern: "\\d{6}",
+              maxLength: 6,
             }}
             sx={{
               "& .MuiInputBase-root": {
@@ -201,7 +201,7 @@ export default function ProductCard() {
                 </>
               ) : (
                 <Typography align="center" variant="body2" color="primary">
-                  Please enter a pincode to get the location
+                  Please enter a pincode to get the location.
                 </Typography>
               )}
             </>
